@@ -1,5 +1,10 @@
-import tkinter as tk
+'''
+uglyGui
+(C) Francis Deck
+MIT License
+'''
 
+import tkinter as tk
 import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
