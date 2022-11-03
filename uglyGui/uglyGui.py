@@ -122,3 +122,40 @@ class Graph():
         toolbar = NavigationToolbar2Tk(self.canvas, parent)
         toolbar.update()
         toolbar.pack(side = tk.TOP)
+        
+class TextEditor():
+    '''
+    I adopted the code from:
+        https://www.geeksforgeeks.org/build-a-basic-text-editor-using-tkinter-in-python/
+    The only nuance is that I put the text editor in a frame, so it can coexist
+    with other widgets in a dialog
+    '''
+    def __init__(self, parent, init):
+        #self.value = tk.StringVar
+        frame = tk.Frame(master = parent)
+        frame.pack(side = tk.TOP, fill = tk.BOTH, expand = 1)
+        self.scrollbar = tk.Scrollbar(frame)
+        self.scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.text = tk.Text(frame,
+                            width = 50, height = 20, 
+                            yscrollcommand=self.scrollbar.set)
+        self.text.pack(fill=tk.BOTH, expand = 1)
+        self.scrollbar.config(command=self.text.yview)
+        self.text.insert('1.0', init)
+        
+    def get(self):
+        return self.text.get('1.0', 'end')
+    
+    def upd(self, text):
+        self.text.delete('1.0', 'end')
+        self.text.insert('1.0', text)
+        
+if __name__ == '__main__':
+    def goBu():
+        print(te.get())
+        te.upd('Mobbs')
+        
+    mainDialog = MainDialog('Text editor test')
+    te = TextEditor(mainDialog, 'hee')
+    bu = Button(mainDialog, 'Do something', action = goBu)
+    mainDialog.show()
