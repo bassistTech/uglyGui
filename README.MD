@@ -2,21 +2,17 @@
 
 Francis Deck
 
-What it is: A bare bones "wrapper" for tkinter. 
+Minimalist GUI library for supporting my own projects.
 
-**Purpose**: Create ugly but readable GUI's quickly, with minimal boilerplate. All layout is automatic. Widgets are arranged vertically in the order that they're created. Options: None.
-
-Philosophically, I have mixed feelings about GUIs. The problem is that really snappy GUIs cost time and effort to develop, and bad GUIs are a source of bugs and frustration for users. I think that for small scale projects, with relatively savvy users, GUIs can be used sparingly, and when possible replaced by other kinds of interfaces, such as good old text. 
-
-At the same time, there are some cases where GUI's are particularly useful: In the lab, you don't always have two hands free for typing. Reaching for a button on a touch screen is so convenient. And nothing beats a graph that can update itself.
+**Purpose**: Create ugly but readable GUI's quickly, with minimal boilerplate. All layout is automatic. Aesthetics are by default. Widgets are arranged vertically in the order that they're created. Options: None.
 
 I'll be using it in some of the other programs that I share, so it belongs in its own repo.
 
-**History**: In the mid 80's, I wrote a graphing program in Turbo Pascal. The program quickly ballooned into screen after screen of options, as I added stuff to meet my own needs. I quickly got sick of "hard coding" menus, so I wrote a library that generated my menus automatically.
+**History**: In the mid 80's, I wrote a graphing program in Turbo Pascal. The program quickly ballooned into screen after screen of options, as I added stuff to meet my own needs. I quickly got sick of "hard coding" menus, so I wrote a library that generated my menus automatically, in MS-DOS text mode.
 
 Then I forgot about it, got into HyperCard, and then Visual Basic. Being able to draw GUIs was certainly intuitive and convenient, but making nice ones becomes physically laborious, unless you automate styling and layout. But if you do that, you're getting close to automating everything.
 
-uglyGui is the same concept as my old Pascal program, brought up to date in Python, using the tkinter library, plus matplotlib for graphing.
+uglyGui is the same concept as my old Pascal program, brought up to date in Python, using the **tkinter** library, plus **matplotlib** for graphing.
 
 **How to get it**: Navigate to a convenient folder for storing this repo, and execute:
 
@@ -53,4 +49,4 @@ You always need a MainDialog, but can add SubDialog objects, which behave the sa
 
 **Learning more**
 
-For more elaborate examples, check out some of my other repo's! I'm going to be using uglyGui for the Python programs that I write and share here.
+For more elaborate examples, check out some of my other repo's! I'm going to be using uglyGui for some the Python programs that I write and share here.
