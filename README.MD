@@ -18,9 +18,9 @@ uglyGui is the same concept as my old Pascal program, brought up to date in Pyth
 
 	git clone https://github.com/bassistTech/uglyGui.git
 	cd uglyGui
-	python setup.py develop
+	pip install -e .
 	
-Note that I chose the "develop" option, which leaves the code in the location where you placed it, and lets you make changes. You can also install with the "install" option, which puts it in your site-packages folder.
+Note that I chose the "editable" mode, which leaves the code in the location where you placed it, and lets you make changes. You can also install without that option, which puts it in your site-packages folder.
 
 **Usage**
 
@@ -35,7 +35,7 @@ You need to create at least one dialog:
 You can add some widgets:
 
 	button1 = uglyGui.Button(mainDialog, 'Press me',
-		action = lambda: print('You pressed me')
+		action = lambda: print('You pressed me'))
 		
 	intEntry1 = uglyGui.IntEntry('Number of things', 20)
 	
