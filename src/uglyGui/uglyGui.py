@@ -81,7 +81,7 @@ class TextEntry(__Entry):
 
 class RadioButtons():
     def __init__(self,
-                 parent, label, buttonLabels, init, vertical):
+                 parent, label, buttonLabels, init, vertical, callback):
 
         self.value = tk.IntVar()
         self.value.set(init)
@@ -94,7 +94,8 @@ class RadioButtons():
         tk.Label(frame, text=label).pack(side=ps)
         for i in range(len(buttonLabels)):
             tk.Radiobutton(frame, text=buttonLabels[i], value=i,
-                           variable=self.value).pack(side=ps)
+                           variable=self.value,
+                           command=callback).pack(side=ps)
 
     def get(self):
         return self.value.get()
