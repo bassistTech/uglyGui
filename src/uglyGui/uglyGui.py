@@ -8,6 +8,7 @@ import pandastable
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 import tkinter as tk
 import matplotlib
+from PIL import ImageTk
 matplotlib.use("TkAgg")
 
 
@@ -52,7 +53,7 @@ class __Entry(tk.Entry):
 
         tk.Label(frame, text=label).pack(side=tk.LEFT)
         self.value = tk.StringVar()
-        super().__init__(frame, textvariable=self.value, width=15)
+        super().__init__(frame, textvariable=self.value, width=45)
         self.pack(side=tk.RIGHT, fill=tk.X)
         self.value.set(str(init))
         self.datatype = datatype
@@ -121,6 +122,20 @@ class CheckBox(tk.Checkbutton):
 
     def upd(self, i):
         self.value.set(i)
+
+
+class ImageLabel(tk.Label):
+    def __init__(self, parent, width, height, image):
+        self.resized_image = image.resize((width, height))
+        self.tk_image = ImageTk.PhotoImage(self.resized_image)
+        super().__init__(parent, image = self.tk_image)
+        self.image = self.tk_image
+        self.pack(side=tk.TOP, fill=tk.BOTH)
+
+    def upd(self, img):
+        self.resized_image = img.resize((300, 400))#, Image.LANCZOS)
+        self.tk_image = ImageTk.PhotoImage(self.resized_image)
+        self.config(image = self.tk_image)
 
 
 class Graph():
